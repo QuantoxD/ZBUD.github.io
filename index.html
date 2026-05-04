@@ -1,84 +1,60 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Moja strona</title>
-
 <style>
-body {
-  background: black;
-  font-family: monospace;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-}
+  /* Owl Container */
+  #owl {
+    display: block;
+    height: 210px;
+    margin: 50px auto;
+    position: relative;
+    width: 210px;
+    cursor: pointer;
+  }
+  
+  #owl img {
+    position: absolute;
+  }
 
-h1 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  animation: rgb 2s linear infinite;
-}
+  /* Position the Body Parts */
+  #owl #body { left: 70px; top: 58px; z-index: 1; }
+  #owl #left-wing { left: 65px; top: 98px; z-index: 2; }
+  #owl #right-wing { left: 128px; top: 98px; z-index: 2; }
+  #owl #eyes { left: 81px; top: 74px; z-index: 3; }
 
-/* SOWA */
-pre {
-  font-size: 16px;
-  line-height: 16px;
-  text-align: center;
-  animation: rgb 2s linear infinite;
-  margin: 0;
-}
+  /* Animation for Wings */
+  .wing {
+    transition: all 0.4s ease-in-out;
+  }
 
-/* RGB efekt */
-@keyframes rgb {
-  0% { color: red; }
-  16% { color: orange; }
-  33% { color: yellow; }
-  50% { color: lime; }
-  66% { color: cyan; }
-  83% { color: blue; }
-  100% { color: magenta; }
-}
+  /* Dancing Effect on Hover */
+  #owl:hover #left-wing {
+    transform: rotate(30deg);
+  }
+  
+  #owl:hover #right-wing {
+    transform: rotate(-30deg);
+  }
+
+  #owl:hover #body {
+    animation: bounce 0.4s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 </style>
 </head>
-
 <body>
 
-<h1>Witam na mojej stronie 👋</h1>
-
-<pre id="owl"></pre>
-
-<script>
-const frames = [
-`   ,_,  
-  (o,o) 
-  (   ) 
-  "   " 
- /|   |\\
-  |   |
- /     \\`,
-
-`   ,_,  
-  (o,o) 
-  (   ) 
-  "   " 
- \\|   |/
-  |   |
- \\     /`
-];
-
-let i = 0;
-
-function animate() {
-  document.getElementById("owl").textContent = frames[i % frames.length];
-  i++;
-}
-
-setInterval(animate, 300);
-</script>
+  <div id="owl">
+    <!-- Replace src with your own image URLs -->
+    <img id="body" src="owl-body.png" alt="Owl Body">
+    <img id="left-wing" class="wing" src="left-wing.png" alt="Left Wing">
+    <img id="right-wing" class="wing" src="right-wing.png" alt="Right Wing">
+    <img id="eyes" src="eyes.png" alt="Eyes">
+  </div>
 
 </body>
 </html>
