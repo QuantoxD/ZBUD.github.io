@@ -1,27 +1,116 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Moja pierwsza strona</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #0f172a;
-      color: white;
-    }
-    h1 {
-      margin-top: 50px;
-      font-size: 3em;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #38bdf8;
-      color: black;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>RGB Dancing Owl</title>
+
+<style>
+body {
+  background: black;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+pre {
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  animation: rgb 2s linear infinite;
+}
+
+/* RGB efekt */
+@keyframes rgb {
+  0% { color: red; }
+  16% { color: orange; }
+  33% { color: yellow; }
+  50% { color: lime; }
+  66% { color: cyan; }
+  83% { color: blue; }
+  100% { color: magenta; }
+}
+</style>
 </head>
+
 <body>
+
+<pre id="owl"></pre>
+
+<script>
+const frames = [
+
+`        ,_, 
+       (o,o)
+       (   )
+       "   "
+     \\|     |/
+      |     |
+   \\  |     |  /
+    \\ |     | /
+      /     \\
+     /|     |\\
+      |     |
+     /       \\
+    /         \\`,
+
+`        ,_, 
+       (o,o)
+       (   )
+       "   "
+      /|     |\\
+      |     |
+      |     |
+   \\  |     |  /
+    \\ |     | /
+      \\     /
+     \\|     |/
+      |     |
+     \\       /
+      \\     /`,
+
+`        ,_, 
+       (o,o)
+       (   )
+       "   "
+   \\  |     |  /
+    \\ |     | /
+      /     \\
+     /|     |\\
+      |     |
+     /       \\
+    /         \\
+      |     |
+      |     |`,
+
+`        ,_, 
+       (o,o)
+       (   )
+       "   "
+      /|     |\\
+      |     |
+      |     |
+     /       \\
+    /         \\
+   \\  |     |  /
+    \\ |     | /
+      \\     /
+     \\|     |/`
+
+];
+
+let i = 0;
+
+function animate() {
+  document.getElementById("owl").textContent = frames[i % frames.length];
+  i++;
+}
+
+// szybka, płynna animacja
+setInterval(animate, 120);
+</script>
+
+</body>
+</html>
