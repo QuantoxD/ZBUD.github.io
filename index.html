@@ -1,60 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-<style>
-  /* Owl Container */
-  #owl {
-    display: block;
-    height: 210px;
-    margin: 50px auto;
-    position: relative;
-    width: 210px;
-    cursor: pointer;
-  }
-  
-  #owl img {
-    position: absolute;
-  }
-
-  /* Position the Body Parts */
-  #owl #body { left: 70px; top: 58px; z-index: 1; }
-  #owl #left-wing { left: 65px; top: 98px; z-index: 2; }
-  #owl #right-wing { left: 128px; top: 98px; z-index: 2; }
-  #owl #eyes { left: 81px; top: 74px; z-index: 3; }
-
-  /* Animation for Wings */
-  .wing {
-    transition: all 0.4s ease-in-out;
-  }
-
-  /* Dancing Effect on Hover */
-  #owl:hover #left-wing {
-    transform: rotate(30deg);
-  }
-  
-  #owl:hover #right-wing {
-    transform: rotate(-30deg);
-  }
-
-  #owl:hover #body {
-    animation: bounce 0.4s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Moja pierwsza strona</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #38bdf8;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
 </head>
-<body>
 
-  <div id="owl">
-    <!-- Replace src with your own image URLs -->
-    <img id="body" src="owl-body.png" alt="Owl Body">
-    <img id="left-wing" class="wing" src="left-wing.png" alt="Left Wing">
-    <img id="right-wing" class="wing" src="right-wing.png" alt="Right Wing">
-    <img id="eyes" src="eyes.png" alt="Eyes">
+<body>
+  <div class="frame">
+    <div class="tailbot"></div>
+    <div class="tailtop"></div>
+    
+    <div class="wingright"></div>
+    <div class="armpitright"></div>
+    
+    <div class="shinright"></div>
+    <div class="shinleft"></div>
+    
+    <div class="thighright"></div>
+    <div class="thighleft"></div>
+    
+    <div class="stick"></div>
+    
+    <div class="footright"></div>
+    <div class="footleft"></div>
+    
+    <div class="bod"></div>
+    <div class="headback"></div>
+    
+<!--  spots    -->
+    <div class="spot0"></div>
+    <div class="spot1"></div>
+    <div class="spot2"></div>
+    <div class="spot3"></div>
+    <div class="spot4"></div>
+    <div class="spot5"></div>
+    <div class="spot6"></div>
+    <div class="spot7"></div>
+    <div class="spot8"></div>
+    <div class="spot9"></div>
+    
+    <div class="chest"></div>
+    <div class="head"></div>
+
+    
+    <div class="wingleft"></div>
+    <div class="armpitleft"></div>
+    
+    <div class="beak"></div>
+    <div class="nose"></div>
+    <div class="eyeleft"></div>
+    <div class="eyeright"></div>
+    <div class="irisleft"></div>
+    <div class="irisright"></div>
+<!--     <div class="lightleft"></div>
+    <div class="lightright"></div> -->
   </div>
+
+  <h1>🚀 Moja strona działa!</h1>
+  <p>Wrzuciłem ją na GitHub Pages</p>
+
+  <button onclick="alert('Działa JS!')">Kliknij mnie</button>
 
 </body>
 </html>
