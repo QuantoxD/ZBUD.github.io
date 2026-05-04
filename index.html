@@ -2,24 +2,34 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>RGB Dancing Owl</title>
+<title>Moja strona</title>
 
 <style>
 body {
   background: black;
   font-family: monospace;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
 }
 
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  animation: rgb 2s linear infinite;
+}
+
+/* SOWA */
 pre {
   font-size: 16px;
   line-height: 16px;
   text-align: center;
   animation: rgb 2s linear infinite;
+  margin: 0;
 }
 
 /* RGB efekt */
@@ -37,68 +47,27 @@ pre {
 
 <body>
 
+<h1>Witam na mojej stronie 👋</h1>
+
 <pre id="owl"></pre>
 
 <script>
 const frames = [
+`   ,_,  
+  (o,o) 
+  (   ) 
+  "   " 
+ /|   |\\
+  |   |
+ /     \\`,
 
-`        ,_, 
-       (o,o)
-       (   )
-       "   "
-     \\|     |/
-      |     |
-   \\  |     |  /
-    \\ |     | /
-      /     \\
-     /|     |\\
-      |     |
-     /       \\
-    /         \\`,
-
-`        ,_, 
-       (o,o)
-       (   )
-       "   "
-      /|     |\\
-      |     |
-      |     |
-   \\  |     |  /
-    \\ |     | /
-      \\     /
-     \\|     |/
-      |     |
-     \\       /
-      \\     /`,
-
-`        ,_, 
-       (o,o)
-       (   )
-       "   "
-   \\  |     |  /
-    \\ |     | /
-      /     \\
-     /|     |\\
-      |     |
-     /       \\
-    /         \\
-      |     |
-      |     |`,
-
-`        ,_, 
-       (o,o)
-       (   )
-       "   "
-      /|     |\\
-      |     |
-      |     |
-     /       \\
-    /         \\
-   \\  |     |  /
-    \\ |     | /
-      \\     /
-     \\|     |/`
-
+`   ,_,  
+  (o,o) 
+  (   ) 
+  "   " 
+ \\|   |/
+  |   |
+ \\     /`
 ];
 
 let i = 0;
@@ -108,8 +77,7 @@ function animate() {
   i++;
 }
 
-// szybka, płynna animacja
-setInterval(animate, 120);
+setInterval(animate, 300);
 </script>
 
 </body>
